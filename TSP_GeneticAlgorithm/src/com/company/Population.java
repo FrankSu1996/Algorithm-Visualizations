@@ -115,6 +115,6 @@ public class Population {
         this.population.sort(Comparator.comparingDouble(Chromosome::calculateDistance));
 
         // keep "fittest" individuals in population
-        this.population.stream().limit(this.initialSize).collect(Collectors.toList());
+        this.population = this.population.stream().limit(this.initialSize).collect(Collectors.toList());
     }
 }
