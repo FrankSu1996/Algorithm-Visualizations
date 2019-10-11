@@ -54,9 +54,9 @@ public class Chromosome {
     }
 
     /**
-     *
-     * @param other
-     * @return
+     * Crossover method to produce children from two parent chromosomes
+     * @param other Other chromosome to be crossed over with
+     * @return an array of two children chromosomes
      */
     Chromosome[] crossOver(final Chromosome other) {
 
