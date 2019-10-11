@@ -102,8 +102,22 @@ public class Chromosome {
         return new Chromosome[] {new Chromosome(firstCrossOver), new Chromosome(secondCrossOver)};
     }
 
-
+    /**
+     * Method to mutate a given chromosome. Switches two random indexes
+     * @return a copy of the mutated chromosome.
+     */
     Chromosome mutate() {
+        final List<Gene> copy = new ArrayList<>(this.chromosome);
 
+        //get two random indexes for chromosome, make sure they aren't the same
+        int indexA = TSPUtils.randomIndex(copy.size());
+        int indexB = TSPUtils.randomIndex(copy.size());
+        while (indexA == indexB) {
+            indexA = TSPUtils.randomIndex(copy.size());
+            indexB = TSPUtils.randomIndex(copy.size());
+        }
+        //swap indexes. Imitates random "mutation" in the chromosome
+        Collections.swap(copy, indexA, indexB);
+        return new Chromosome(copy);
     }
 }
