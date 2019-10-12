@@ -1,17 +1,20 @@
-package com.company;
+package com.company.GUI;
+
+import com.company.algorithm.Gene;
+import com.company.algorithm.Population;
+import com.company.algorithm.TSPUtils;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class World extends JPanel implements Runnable{
 
     private final AtomicInteger generation;
     private final Population population;
-    static final int WIDTH = 800;
-    static final int HEIGHT = 600;
+    public static final int WIDTH = 800;
+    public static final int HEIGHT = 600;
     private Timer timer;
 
 

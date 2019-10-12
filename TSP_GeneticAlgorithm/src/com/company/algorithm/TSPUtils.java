@@ -1,4 +1,6 @@
-package com.company;
+package com.company.algorithm;
+
+import com.company.GUI.World;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +11,7 @@ public class TSPUtils {
 
     private final static Random R = new Random(10000);
 
-    static final Gene[] CITIES = generateData(100);
+    public static final Gene[] CITIES = generateData(50);
 
     private TSPUtils() {
         throw new RuntimeException("Cannot instantiate this class!");

@@ -1,4 +1,4 @@
-package com.company;
+package com.company.algorithm;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -15,7 +15,7 @@ public class Population {
     private List<Chromosome> population;
     private final int initialSize;
 
-    Population(final Gene[] points, final int initialSize) {
+    public Population(final Gene[] points, final int initialSize) {
         this.population = init(points, initialSize);
         this.initialSize = initialSize;
     }
@@ -24,7 +24,7 @@ public class Population {
      * Returns "best" fitness chromosome in population.
      * @return "best" fitness chromosome in population.
      */
-    Chromosome getAlpha() {
+    public Chromosome getAlpha() {
         return this.population.get(0);
     }
 
@@ -49,7 +49,7 @@ public class Population {
      * perform update on population to represent 1 iteration in genetic algorithm.
      * Must perform chromosome crossover, mutation, create offspring, and select most fit individuals
      */
-    void update() {
+    public void update() {
         crossOver();
         mutation(10);
         spawn(1000);

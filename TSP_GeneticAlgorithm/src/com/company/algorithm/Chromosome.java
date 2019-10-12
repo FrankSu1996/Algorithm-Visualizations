@@ -1,6 +1,5 @@
-package com.company;
+package com.company.algorithm;
 
-import java.lang.reflect.Array;
 import java.util.*;
 
 /**
@@ -37,7 +36,7 @@ public class Chromosome {
         return builder.toString();
     }
 
-    List<Gene> getChromosome() {
+    public List<Gene> getChromosome() {
         return this.chromosome;
     }
 
@@ -45,7 +44,7 @@ public class Chromosome {
      * Method to return total distance of chromosome, represents it's fitness
      * @return the total distance of chromosome. Essentially a random solution to TSP
      */
-    double calculateDistance() {
+    public double calculateDistance() {
         double total = 0.0f;
         for(int i = 0; i < this.chromosome.size() - 1; i++) {
             total += this.chromosome.get(i).distance(this.chromosome.get(i+1));

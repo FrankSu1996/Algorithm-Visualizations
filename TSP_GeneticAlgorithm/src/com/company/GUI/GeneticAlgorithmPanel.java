@@ -1,28 +1,22 @@
-package com.company;
+package com.company.GUI;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class MainFrame extends JFrame {
+public class GeneticAlgorithmPanel extends JPanel {
 
     private World world;
 
-    public MainFrame() {
-        this.setTitle("Genetic Algorithm");
-        this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        this.setResizable(false);
+    public GeneticAlgorithmPanel() {
         this.setLayout(new BorderLayout());
         this.world = new World();
         this.add(this.world, BorderLayout.CENTER);
-        this.pack();
 
         //creating menu bar
         final JMenuBar tableMenuBar = createMenuBar();
-        this.setJMenuBar(tableMenuBar);
-        this.setLocationRelativeTo(null);
-        this.setVisible(true);
+        this.add(tableMenuBar, BorderLayout.NORTH);
     }
 
     public JMenuBar createMenuBar() {
@@ -73,14 +67,10 @@ public class MainFrame extends JFrame {
 
     private void resetGame() {
         this.world.stop();
-        this.getContentPane().removeAll();
+        this.remove(world);
         this.world = null;
         this.world = new World();
-        this.getContentPane().add(this.world);
+        this.add(this.world);
         this.revalidate();
-    }
-
-    public static void main(String[] args) {
-        JFrame frame = new MainFrame();
     }
 }
