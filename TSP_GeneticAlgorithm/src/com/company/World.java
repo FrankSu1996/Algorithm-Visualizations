@@ -3,26 +3,25 @@ package com.company;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class World extends JPanel {
+public class World extends JPanel implements Runnable{
 
     private final AtomicInteger generation;
     private final Population population;
-
     static final int WIDTH = 800;
     static final int HEIGHT = 600;
+    public boolean isRunning;
+    Timer timer;
 
-    private World() {
+
+    public World() {
         setPreferredSize(new Dimension(WIDTH, HEIGHT));
         setBackground(Color.BLACK);
         this.generation = new AtomicInteger(0);
         this.population = new Population(TSPUtils.CITIES, 1000);
-        final Timer timer = new Timer(5, (ActionEvent e) -> {
-            this.population.update();
-            repaint();
-        });
-        timer.start();
+        this.isRunning = false;
     }
 
     @Override
@@ -58,16 +57,18 @@ public class World extends JPanel {
         }
     }
 
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> {
-            final JFrame frame = new JFrame();
-            frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-            frame.setTitle("Genetic Algorithm");
-            frame.setResizable(false);
-            frame.add(new World(), BorderLayout.CENTER);
-            frame.pack();
-            frame.setLocationRelativeTo(null);
-            frame.setVisible(true);
+    public void stop() {
+        if (this.timer.isRunning()) {
+            this.timer.stop();
+        }
+    }
+
+    @Override
+    public void run() {
+        this.timer = new Timer(5, (ActionEvent e) -> {
+            this.population.update();
+            repaint();
         });
+        timer.start();
     }
 }

@@ -51,7 +51,7 @@ public class Population {
      */
     void update() {
         crossOver();
-        mutation();
+        mutation(10);
         spawn(1000);
         selection();
     }
@@ -91,9 +91,9 @@ public class Population {
      * Method to perform mutation on percentage of population. Updates population parameter with all
      * mutated chromosomes
      */
-    private void mutation() {
+    private void mutation(int percent) {
         final List<Chromosome> newPopulation = new ArrayList<>();
-        for (int i = 0; i < this.population.size()/10; i++) {
+        for (int i = 0; i < this.population.size()/percent; i++) {
             Chromosome mutation = this.population.get(TSPUtils.randomIndex(this.population.size())).mutate();
             newPopulation.add(mutation);
         }
