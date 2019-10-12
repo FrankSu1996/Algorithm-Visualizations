@@ -1,6 +1,7 @@
 package com.company.GUI;
 
 import javax.swing.*;
+import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -32,13 +33,46 @@ public class GeneticAlgorithm {
     private JPanel createMenu() {
         JPanel menu = new JPanel();
         //setup Menu JPanel
-        menu.setPreferredSize(new Dimension(800, 600));
+        menu.setPreferredSize(new Dimension(600, 600));
         menu.setBackground(Color.CYAN);
         menu.setLayout(new BorderLayout());
-        JLabel title = new JLabel("Genetic Algorithm Visualization");
+        JLabel title = new JLabel("Genetic Algorithm");
         title.setFont(new Font("Comic Sans MS", Font.BOLD, 50));
         title.setHorizontalAlignment(JLabel.CENTER);
         menu.add(title, BorderLayout.PAGE_START);
+
+        //Left Panel is for configuring the world
+        JPanel middle = new JPanel(new BorderLayout());
+        middle.setBackground(Color.CYAN);
+        JPanel leftPanel = new JPanel(new GridBagLayout());
+        leftPanel.setPreferredSize(new Dimension(300, 300));
+        Border leftInnerBorder = BorderFactory.createTitledBorder("Configure World");
+        Border leftOuterBorder = BorderFactory.createEmptyBorder(5, 5, 5, 5);
+        leftPanel.setBorder(BorderFactory.createCompoundBorder(leftOuterBorder, leftInnerBorder));
+        leftPanel.setBackground(Color.LIGHT_GRAY);
+        middle.add(leftPanel, BorderLayout.WEST);
+
+        //Configure layout for left panel
+        GridBagConstraints c = new GridBagConstraints();
+        c.gridy = 0;
+        c.gridx = 0;
+        c.weightx = 1;
+        c.weighty = 1;
+        c.fill = GridBagConstraints.NONE;
+        JLabel numCities = new JLabel("Number of Cities: ");
+        leftPanel.add(numCities, c);
+        c.gridx = 1;
+        c.gridy = 0;
+        JTextField numCitiesField = new JTextField(5);
+        leftPanel.add(numCitiesField);
+
+        //Right panel is for description
+        JPanel rightPanel = new JPanel(new GridBagLayout());
+        rightPanel.setPreferredSize(new Dimension(300, 300));
+        Border rightInnerBorder = BorderFactory.createTitledBorder("Description");
+        Border rightOuterBorder = BorderFactory.createEmptyBorder(10, 10, 10, 10);
+        rightPanel.setBorder(BorderFactory.createCompoundBorder(rightInnerBorder, rightOuterBorder));
+        middle.add(rightPanel, BorderLayout.CENTER);
 
         //add DNA icon to JPanel
         try {
@@ -46,7 +80,8 @@ public class GeneticAlgorithm {
             JLabel pic = new JLabel(new ImageIcon(dna));
             pic.setLayout(new BorderLayout());
             pic.setVerticalAlignment(JLabel.NORTH);
-            menu.add(pic, BorderLayout.CENTER);
+
+            middle.add(pic, BorderLayout.NORTH);
         } catch (IOException e)
         {
             e.printStackTrace();
@@ -59,6 +94,7 @@ public class GeneticAlgorithm {
                 startSimulation();
             }
         });
+        menu.add(middle, BorderLayout.CENTER);
         return menu;
     }
 
