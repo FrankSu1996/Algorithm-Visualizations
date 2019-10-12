@@ -12,8 +12,7 @@ public class World extends JPanel implements Runnable{
     private final Population population;
     static final int WIDTH = 800;
     static final int HEIGHT = 600;
-    public boolean isRunning;
-    Timer timer;
+    private Timer timer;
 
 
     public World() {
@@ -21,7 +20,10 @@ public class World extends JPanel implements Runnable{
         setBackground(Color.BLACK);
         this.generation = new AtomicInteger(0);
         this.population = new Population(TSPUtils.CITIES, 1000);
-        this.isRunning = false;
+        this.timer = new Timer(5, (ActionEvent e) -> {
+            this.population.update();
+            repaint();
+        });
     }
 
     @Override
@@ -58,17 +60,15 @@ public class World extends JPanel implements Runnable{
     }
 
     public void stop() {
-        if (this.timer.isRunning()) {
+        if (this.timer != null) {
             this.timer.stop();
         }
     }
 
     @Override
     public void run() {
-        this.timer = new Timer(5, (ActionEvent e) -> {
-            this.population.update();
-            repaint();
-        });
-        timer.start();
+        if (!this.timer.isRunning()) {
+            timer.start();
+        }
     }
 }
