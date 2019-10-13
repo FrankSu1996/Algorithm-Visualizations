@@ -105,7 +105,6 @@ public class GeneticAlgorithm {
         JLabel description1 = new JLabel(sb1.toString());
         rightPanel.add(description1, BorderLayout.NORTH);
 
-
         StringBuilder sb2 = new StringBuilder(64);
         sb2.append("<html>Population size: the size of the population that is used in the algorithm.</html>");
         JLabel description2 = new JLabel(sb2.toString());
