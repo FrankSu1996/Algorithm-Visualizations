@@ -102,15 +102,17 @@ public class Chromosome {
     Chromosome mutate() {
         final List<Gene> copy = new ArrayList<>(this.chromosome);
 
-        //get two random indexes for chromosome, make sure they aren't the same
-        int indexA = TSPUtils.randomIndex(copy.size());
-        int indexB = TSPUtils.randomIndex(copy.size());
-        while (indexA == indexB) {
-            indexA = TSPUtils.randomIndex(copy.size());
-            indexB = TSPUtils.randomIndex(copy.size());
+        for (int i = 0; i < TSPUtils.MUTATION_SEVERITY; i++) {
+            //get two random indexes for chromosome, make sure they aren't the same
+            int indexA = TSPUtils.randomIndex(copy.size());
+            int indexB = TSPUtils.randomIndex(copy.size());
+            while (indexA == indexB) {
+                indexA = TSPUtils.randomIndex(copy.size());
+                indexB = TSPUtils.randomIndex(copy.size());
+            }
+            //swap indexes. Imitates random "mutation" in the chromosome
+            Collections.swap(copy, indexA, indexB);
         }
-        //swap indexes. Imitates random "mutation" in the chromosome
-        Collections.swap(copy, indexA, indexB);
         return new Chromosome(copy);
     }
 }

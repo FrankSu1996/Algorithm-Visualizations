@@ -10,10 +10,9 @@ import java.util.stream.IntStream;
 public class TSPUtils {
 
     private final static Random R = new Random(10000);
-
     public static Gene[] CITIES = new Gene[0];
-
     public static int POPULATION_SIZE = 0;
+    public static int MUTATION_SEVERITY = 0;
 
     private TSPUtils() {
         throw new RuntimeException("Cannot instantiate this class!");

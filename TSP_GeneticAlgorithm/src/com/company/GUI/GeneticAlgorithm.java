@@ -19,6 +19,7 @@ public class GeneticAlgorithm {
     private World world;
     private JTextField numCities;
     private JTextField popSize;
+    private JTextField mutSeverity;
 
     public GeneticAlgorithm() {
         this.mainMenu = createMenu();
@@ -82,13 +83,13 @@ public class GeneticAlgorithm {
 
         c.gridy = 2;
         c.gridx = 0;
-        JLabel mutSeverity = new JLabel("Mutation Severity: ");
-        leftPanel.add(mutSeverity, c);
+        JLabel mutSeverityLabel = new JLabel("Mutation Severity: ");
+        leftPanel.add(mutSeverityLabel, c);
 
         c.gridy = 2;
         c.gridx = 1;
-        JTextField mutSeverityField = new JTextField(5);
-        leftPanel.add(mutSeverityField, c);
+        mutSeverity = new JTextField(5);
+        leftPanel.add(mutSeverity, c);
 
         //Right panel is for description
         JPanel rightPanel = new JPanel(new BorderLayout());
@@ -111,7 +112,7 @@ public class GeneticAlgorithm {
         rightPanel.add(description2, BorderLayout.CENTER);
 
         StringBuilder sb3 = new StringBuilder(64);
-        sb3.append("<html>Mutation Severity: How much of the DNA is mutated for each mutation that occurs.</html>");
+        sb3.append("<html>Mutation Severity: How much of the DNA is mutated for each mutation that occurs. (1-15) optimal </html>");
         JLabel description3 = new JLabel(sb3.toString());
         rightPanel.add(description3, BorderLayout.PAGE_END);
 
@@ -201,22 +202,32 @@ public class GeneticAlgorithm {
     private void startSimulation() {
         String numberCities = this.numCities.getText().strip();
         String popSize = this.popSize.getText().strip();
+        String mutSeverity = this.mutSeverity.getText().strip();
 
-        //check if user has entered a a valid input for number of cities
+        //check if user has entered a valid input for number of cities
         if (numberCities == "" || !isInteger(numberCities)) {
             JOptionPane.showMessageDialog(this.mainMenu, "You must enter a positive integer value for Number of Cities!!");
             return;
         }
 
-        //check if user has entered a a valid input for population size
+        //check if user has entered a valid input for population size
         if (popSize == "" || !isInteger(popSize)) {
             JOptionPane.showMessageDialog(this.mainMenu, "You must enter a positive integer value for Population Size!!");
+            return;
+        }
+
+        //check if user has entered a valid input for population size and that it is less than number of cities
+        if(mutSeverity == "" || !isInteger(mutSeverity) || Integer.parseInt(mutSeverity) >= Integer.parseInt(numberCities) - 1) {
+            JOptionPane.showMessageDialog(this.mainMenu, "You must enter a positive integer value for Mutation Severity " +
+                    "and it must be smaller than Number of Cities!!");
             return;
         }
 
         //set parameters in TSPUtils
         TSPUtils.CITIES = TSPUtils.generateData(Integer.parseInt(numberCities));
         TSPUtils.POPULATION_SIZE = Integer.parseInt(popSize);
+        TSPUtils.MUTATION_SEVERITY = Integer.parseInt(mutSeverity);
+
         this.world = new World();
         JPanel panel = new JPanel(new BorderLayout());
         panel.add(this.world, BorderLayout.CENTER);
