@@ -11,7 +11,9 @@ public class TSPUtils {
 
     private final static Random R = new Random(10000);
 
-    public static final Gene[] CITIES = generateData(50);
+    public static Gene[] CITIES = new Gene[0];
+
+    public static int POPULATION_SIZE = 0;
 
     private TSPUtils() {
         throw new RuntimeException("Cannot instantiate this class!");
@@ -22,7 +24,7 @@ public class TSPUtils {
      * @param numberDataPoints the number of cities to be generated
      * @return
      */
-    private static Gene[] generateData(final int numberDataPoints) {
+    public static Gene[] generateData(final int numberDataPoints) {
         final Gene[] data = new Gene[numberDataPoints];
         for(int i = 0; i < numberDataPoints; i++) {
             data[i] = new Gene(TSPUtils.randomIndex(World.WIDTH), TSPUtils.randomIndex(World.HEIGHT));

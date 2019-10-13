@@ -10,7 +10,6 @@ import java.awt.event.ActionEvent;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class World extends JPanel implements Runnable{
-
     private final AtomicInteger generation;
     private final Population population;
     public static final int WIDTH = 800;
@@ -22,7 +21,7 @@ public class World extends JPanel implements Runnable{
         setPreferredSize(new Dimension(WIDTH, HEIGHT));
         setBackground(Color.BLACK);
         this.generation = new AtomicInteger(0);
-        this.population = new Population(TSPUtils.CITIES, 1000);
+        this.population = new Population(TSPUtils.CITIES, TSPUtils.POPULATION_SIZE);
         this.timer = new Timer(5, (ActionEvent e) -> {
             this.population.update();
             repaint();

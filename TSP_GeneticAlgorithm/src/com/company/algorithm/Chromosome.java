@@ -92,12 +92,6 @@ public class Chromosome {
             }
         }
 
-        //check validity of crossover results
-        if(firstCrossOver.size() != TSPUtils.CITIES.length ||
-           secondCrossOver.size() != TSPUtils.CITIES.length) {
-            throw new RuntimeException("OOPS!");
-        }
-
         return new Chromosome[] {new Chromosome(firstCrossOver), new Chromosome(secondCrossOver)};
     }
 
