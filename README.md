@@ -5,6 +5,11 @@ Currently includes:
 * implemented a multivariate linear regression model on Wine Quality using gradient descent
 * genetic algorithm implementation to solve "The Travelling Salesman" problem
 
+## Linear Regression Model
+This was my first introduction to machine learning algorithms. I implemented a multivariate linear regression model using Python's NumPy 
+libary and Jupyter Notebook to predict what factors are important in wine quality. The dataset was taken from: 
+[I'm an inline-style link](https://www.kaggle.com/uciml/red-wine-quality-cortez-et-al-2009)
+
 ## Genetic Algorithm
 The genetic algorithm is a heuristic algorithm inspired by the process of natural selection. The 
 idea is that by initializing a population that represents potential solutions to a given problem, then
