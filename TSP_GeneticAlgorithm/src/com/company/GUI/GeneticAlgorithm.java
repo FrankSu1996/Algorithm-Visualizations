@@ -2,6 +2,7 @@ package com.company.GUI;
 
 import com.company.algorithm.TSPUtils;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
@@ -117,7 +118,7 @@ public class GeneticAlgorithm {
 
         //add DNA icon to JPanel
         try {
-            BufferedImage dna = read(new File("images/dna.png"));
+            BufferedImage dna = ImageIO.read(new File("images/dna.png"));
             JLabel pic = new JLabel(new ImageIcon(dna));
             pic.setLayout(new BorderLayout());
             pic.setVerticalAlignment(JLabel.NORTH);
