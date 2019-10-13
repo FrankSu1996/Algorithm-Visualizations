@@ -7,8 +7,7 @@ Currently includes:
 
 ## Linear Regression Model
 This was my first introduction to machine learning algorithms. I implemented a multivariate linear regression model using Python's NumPy 
-libary and Jupyter Notebook to predict what factors are important in wine quality. The dataset was taken from: 
-[Link:](https://www.kaggle.com/uciml/red-wine-quality-cortez-et-al-2009)
+libary and Jupyter Notebook to predict what factors are important in wine quality. The dataset was taken from [here](https://www.kaggle.com/uciml/red-wine-quality-cortez-et-al-2009)
 
 ## Genetic Algorithm
 The genetic algorithm is a heuristic algorithm inspired by the process of natural selection. The 
@@ -17,7 +16,7 @@ by randomly creating offspring and calculating their fitness as a value proporti
 we can select those who are most "fit" to represent the next generation. By repeating the process through 
 many iterative generations, we the genetic algorithm will eventually come up with the optimal solution. 
 
-[Read More about Genetic Algorithm here](https://en.wikipedia.org/wiki/Genetic_algorithm)
+[Read More about Genetic Algorithm](https://en.wikipedia.org/wiki/Genetic_algorithm)
 
 ### How to use this program
 in out/artifacts/, there is an executable jar file that will open the GUI for the program. Upon downloading and executing the JAR, 
