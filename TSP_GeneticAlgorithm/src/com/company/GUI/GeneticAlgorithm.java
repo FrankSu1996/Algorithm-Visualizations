@@ -16,7 +16,7 @@ import static javax.imageio.ImageIO.read;
 
 public class GeneticAlgorithm {
     private JFrame frame;
-    private JPanel mainMenu;
+    public JPanel mainMenu;
     private World world;
     private JTextField numCities;
     private JTextField popSize;
@@ -118,7 +118,7 @@ public class GeneticAlgorithm {
 
         //add DNA icon to JPanel
         try {
-            BufferedImage dna = ImageIO.read(new File("images/dna.png"));
+            BufferedImage dna = ImageIO.read(GeneticAlgorithm.class.getResource("/images/dna.png"));
             JLabel pic = new JLabel(new ImageIcon(dna));
             pic.setLayout(new BorderLayout());
             pic.setVerticalAlignment(JLabel.NORTH);
