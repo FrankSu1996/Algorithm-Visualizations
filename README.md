@@ -20,7 +20,7 @@ many iterative generations, we the genetic algorithm will eventually come up wit
 [Read More about Genetic Algorithm here](https://en.wikipedia.org/wiki/Genetic_algorithm)
 
 ### How to use this program
-in out/artifacts/, there is an executable jar file that will open the GUI for the program. Upon executing the JAR, 
+in out/artifacts/, there is an executable jar file that will open the GUI for the program. Upon downloading and executing the JAR, 
 the main menu will appear as the following:
 
 
