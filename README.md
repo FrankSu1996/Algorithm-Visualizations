@@ -17,7 +17,11 @@ many iterative generations, we the genetic algorithm will eventually come up wit
 ### How to use this program
 in out/artifacts/, there is an executable jar file that will open the GUI for the program. Upon executing the JAR, 
 the main menu will appear as the following:
+
+
+
 ![alt text](https://github.com/FrankSu1996/Machine-Learning/blob/master/TSP_GeneticAlgorithm/images/mainMenu.png)
+
 
 To start a simulation, you must enter a positive integer value for all of the parameters:
 
@@ -31,4 +35,4 @@ Once these parameters are set, merely click the start button to be taken to the 
 options menu -> start to start the simulation. There is also an option to reset the simulation with the same parameters, or to go back
 to the main menu and reset the parameters for a new simulation. Enjoy!!
 
-![alt text](https://github.com/FrankSu1996/Machine-Learning/blob/master/TSP_GeneticAlgorithm/images/mainMenu.png)
+![alt text](https://github.com/FrankSu1996/Machine-Learning/blob/master/TSP_GeneticAlgorithm/images/world.png)
