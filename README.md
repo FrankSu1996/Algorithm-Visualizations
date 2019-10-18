@@ -7,8 +7,7 @@ Currently includes:
 
 ## Linear Regression Model
 This was my first introduction to machine learning algorithms. I implemented a multivariate linear regression model using Python's NumPy 
-libary and Jupyter Notebook to predict what factors are important in wine quality. The dataset was taken from: 
-[I'm an inline-style link](https://www.kaggle.com/uciml/red-wine-quality-cortez-et-al-2009)
+libary and Jupyter Notebook to predict what factors are important in wine quality. The dataset was taken from [kaggle](https://www.kaggle.com/uciml/red-wine-quality-cortez-et-al-2009)
 
 ## Genetic Algorithm
 The genetic algorithm is a heuristic algorithm inspired by the process of natural selection. The 
@@ -17,15 +16,15 @@ by randomly creating offspring and calculating their fitness as a value proporti
 we can select those who are most "fit" to represent the next generation. By repeating the process through 
 many iterative generations, we the genetic algorithm will eventually come up with the optimal solution. 
 
-[Read More about Genetic Algorithm here](https://en.wikipedia.org/wiki/Genetic_algorithm)
+[Read More about Genetic Algorithm](https://en.wikipedia.org/wiki/Genetic_algorithm)
 
 ### How to use this program
-in out/artifacts/, there is an executable jar file that will open the GUI for the program. Upon executing the JAR, 
+in out/artifacts/, there is an executable jar file that will open the GUI for the program. Upon downloading and executing the JAR, 
 the main menu will appear as the following:
 
 
 
-![alt text](https://github.com/FrankSu1996/Machine-Learning/blob/master/TSP_GeneticAlgorithm/images/mainMenu.png)
+![alt text](https://github.com/FrankSu1996/Machine-Learning/blob/master/TSP_GeneticAlgorithm/src/images/mainMenu.png)
 
 
 To start a simulation, you must enter a positive integer value for all of the parameters:
@@ -40,4 +39,4 @@ Once these parameters are set, merely click the start button to be taken to the 
 options menu -> start to start the simulation. There is also an option to reset the simulation with the same parameters, or to go back
 to the main menu and reset the parameters for a new simulation. Enjoy!!
 
-![alt text](https://github.com/FrankSu1996/Machine-Learning/blob/master/TSP_GeneticAlgorithm/images/world.png)
+![alt text](https://github.com/FrankSu1996/Machine-Learning/blob/master/TSP_GeneticAlgorithm/src/images/world.png)
