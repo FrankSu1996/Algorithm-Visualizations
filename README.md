@@ -1,13 +1,9 @@
-# Machine-Learning
-This repo contains practice implementations of various machine learning algorithms
+# Algorithm Visualizations
+This repository contains various applications that give a visual representation of how certain algorithms work.
 
 Currently includes:
-* implemented a multivariate linear regression model on Wine Quality using gradient descent
-* genetic algorithm implementation to solve "The Travelling Salesman" problem
-
-## Linear Regression Model
-This was my first introduction to machine learning algorithms. I implemented a multivariate linear regression model using Python's NumPy 
-libary and Jupyter Notebook to predict what factors are important in wine quality. The dataset was taken from [kaggle](https://www.kaggle.com/uciml/red-wine-quality-cortez-et-al-2009)
+* [Genetic Algorithm](https://towardsdatascience.com/introduction-to-genetic-algorithms-including-example-code-e396e98d8bf3)- a search heuristic algorithm used to solve "The travelling salesman problem"
+* [Djikstra's Algorithm](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm) - a graph processing algorithm used to find the shortest path between nodes
 
 ## Genetic Algorithm
 The genetic algorithm is a heuristic algorithm inspired by the process of natural selection. The 
