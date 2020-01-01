@@ -2,7 +2,7 @@
 This repository contains various applications that give a visual representation of how certain algorithms work.
 
 Currently includes:
-* [Genetic Algorithm](https://towardsdatascience.com/introduction-to-genetic-algorithms-including-example-code-e396e98d8bf3)- a search heuristic algorithm used to solve "The travelling salesman problem"
+* [Genetic Algorithm](https://towardsdatascience.com/introduction-to-genetic-algorithms-including-example-code-e396e98d8bf3)- a search heuristic algorithm used to solve ["The travelling salesman problem"](https://en.wikipedia.org/wiki/Travelling_salesman_problem)
 * [Djikstra's Algorithm](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm) - a graph processing algorithm used to find the shortest path between nodes
 
 ## Genetic Algorithm
