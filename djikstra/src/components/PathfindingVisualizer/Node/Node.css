@@ -1,6 +1,18 @@
 .Node {
   width: 20px;
   height: 20px;
-  outline: 1px solid black;
+  outline: 1px solid rgb(175, 216, 248);
   display: inline-block;
+}
+
+.node-start {
+  background-color: red;
+}
+
+.node-finish {
+  background-color: yellow;
+}
+
+.node-visited {
+  background-color: blue;
 }
