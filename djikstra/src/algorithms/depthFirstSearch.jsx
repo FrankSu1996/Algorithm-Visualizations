@@ -6,7 +6,7 @@
 export function unweightedAlgorithm(grid, startNode, endNode, algorithm) {
   const visitedNodesInOrder = [];
   const stack = [];
-  startNode.isVisisted = true;
+  startNode.isVisited = true;
   stack.push(startNode);
   let counter = 0;
   startNode.distance = 0;
@@ -17,7 +17,7 @@ export function unweightedAlgorithm(grid, startNode, endNode, algorithm) {
     } else if (algorithm === "breadthFirstSearch") {
       node = stack.shift();
     }
-    if (!node.isVisisted) node.isVisisted = true;
+    node.isVisited = true;
     visitedNodesInOrder.push(node);
 
     if (node.isWall) {
@@ -33,7 +33,7 @@ export function unweightedAlgorithm(grid, startNode, endNode, algorithm) {
 
     //push all unvisited neighbors onto stack, and set link to previous node
     for (const neighbor of unvisitedNeighbors) {
-      if (!neighbor.isVisisted && !neighbor.isWall) {
+      if (!neighbor.isVisited && !neighbor.isWall) {
         neighbor.previousNode = node;
         neighbor.distance = node.distance + 1;
         stack.push(neighbor);
