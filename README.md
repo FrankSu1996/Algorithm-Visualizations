@@ -3,7 +3,10 @@ This repository contains various applications that give a visual representation 
 
 Currently includes:
 * [Genetic Algorithm](https://towardsdatascience.com/introduction-to-genetic-algorithms-including-example-code-e396e98d8bf3)- a search heuristic algorithm used to solve ["The travelling salesman problem"](https://en.wikipedia.org/wiki/Travelling_salesman_problem)
-* [Djikstra's Algorithm](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm) - a graph processing algorithm used to find the shortest path between nodes
+* Graph Processing Algorithms: Includes various algorithms for finding paths between start and end nodes in a graph. Currently includes:
+1. [Djikstra's Algorithm](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm) - a weighted graph traversal algorithm used to find the shortest path between nodes
+2. [Depth First Search](https://en.wikipedia.org/wiki/Depth-first_search) - non-weighted graph traversal algorithm that does not gauruntee the shortest path
+3. [Breadth First Search](https://en.wikipedia.org/wiki/Breadth-first_search) - a non-weighted graph traversal algorithm that gauruntees the shortest path
 
 ## Genetic Algorithm
 The genetic algorithm is a heuristic algorithm inspired by the process of natural selection. The 
@@ -36,3 +39,6 @@ options menu -> start to start the simulation. There is also an option to reset 
 to the main menu and reset the parameters for a new simulation. Enjoy!!
 
 ![alt text](https://github.com/FrankSu1996/Machine-Learning/blob/master/TSP_GeneticAlgorithm/src/images/world.png)
+
+## Graph Processing Algorithms
+To run the application, please clone the repository. Then, inside the GraphAlgorithms directory, first run **npm install** to install dependencies, then **npm start** to view the application running locally in your browser.
