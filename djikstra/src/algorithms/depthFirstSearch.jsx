@@ -1,39 +1,38 @@
-// Performs either DepthFirstSearch or Breadth First Search algorithm;
+// Performs either weightedAlgorithm or Breadth First Search algorithm;
 // returns *all* nodes in the order
 // in which they were visited. Also makes nodes point back to their
 // previous node, effectively allowing us to compute the shortest path
 // by backtracking from the finish node.
-export function depthFirstSearch(grid, startNode, endNode, algorithm) {
+export function unweightedAlgorithm(grid, startNode, endNode, algorithm) {
   const visitedNodesInOrder = [];
   const stack = [];
   stack.push(startNode);
   let counter = 0;
-  console.log(algorithm);
   startNode.distance = 0;
-  let node = null;
 
   while (!!stack.length) {
-    if (algorithm === "depthFirstSearch") {
-      node = stack.pop();
-    } else if (algorithm === "breadthFirstSearch") {
-      node = stack.shift();
-    }
-
+    // if (algorithm === "depthFirstSearch") {
+    //   const node = stack.pop();
+    // } else if (algorithm === "breadthFirstSearch") {
+    //   const node = stack.shift();
+    // }
+    const node = stack.pop();
     node.isVisisted = true;
     visitedNodesInOrder.push(node);
-    console.log(visitedNodesInOrder[counter].previousNode);
-    counter++;
     if (node.isWall) {
       continue;
     }
 
     // If the closest node is at a distance of infinity,
     // we must be trapped and should therefore stop.
-    if (node.distance === Infinity) return visitedNodesInOrder;
+    if (node.distance === Infinity) {
+      console.log('END REACHED' + visitedNodesInOrder);
+      return visitedNodesInOrder;
+    }
 
     //end node is reached: return all nodes visited in order
     if (node === endNode) {
-      console.log(visitedNodesInOrder);
+      console.log('END REACHED' + visitedNodesInOrder);
       return visitedNodesInOrder;
     }
 
@@ -43,9 +42,9 @@ export function depthFirstSearch(grid, startNode, endNode, algorithm) {
     for (const neighbor of unvisitedNeighbors) {
       if (!neighbor.isVisisted) {
         neighbor.previousNode = node;
+        neighbor.distance = node.distance + 1;
         stack.push(neighbor);
       }
-      updateUnvisitedNeighbors(node, grid);
     }
   }
 }
@@ -60,7 +59,7 @@ function updateUnvisitedNeighbors(node, grid) {
 
 function getUnvisitedNeighbors(node, grid) {
   const neighbors = [];
-  const { col, row } = node;
+  const {col, row} = node;
   if (row > 0) neighbors.push(grid[row - 1][col]);
   if (row < grid.length - 1) neighbors.push(grid[row + 1][col]);
   if (col > 0) neighbors.push(grid[row][col - 1]);

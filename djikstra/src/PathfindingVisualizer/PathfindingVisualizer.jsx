@@ -1,42 +1,42 @@
-import React, { Component } from "react";
-import Node from "./Node/Node";
-import { dijkstra, getNodesInShortestPathOrder } from "../algorithms/dijkstra";
-import { depthFirstSearch } from "../algorithms/depthFirstSearch";
+import React, {Component} from 'react';
+import Node from './Node/Node';
+import {dijkstra, getNodesInShortestPathOrder} from '../algorithms/dijkstra';
+import {unweightedAlgorithm} from '../algorithms/depthFirstSearch';
 
-import "./PathfindingVisualizer.css";
+import './PathfindingVisualizer.css';
 
-const START_NODE_ROW = 4;
+const START_NODE_ROW = 10;
 const START_NODE_COL = 15;
-const FINISH_NODE_ROW = 9;
-const FINISH_NODE_COL = 48;
+const FINISH_NODE_ROW = 10;
+const FINISH_NODE_COL = 30;
 
 export default class PathfindingVisualizer extends Component {
   constructor() {
     super();
     this.state = {
       grid: [],
-      mouseIsPressed: false
+      mouseIsPressed: false,
     };
   }
 
   componentDidMount() {
     const grid = getInitialGrid();
-    this.setState({ grid });
+    this.setState({grid});
   }
 
   handleMouseDown(row, col) {
     const newGrid = getNewGridWithWallToggled(this.state.grid, row, col);
-    this.setState({ grid: newGrid, mouseIsPressed: true });
+    this.setState({grid: newGrid, mouseIsPressed: true});
   }
 
   handleMouseEnter(row, col) {
     if (!this.state.mouseIsPressed) return;
     const newGrid = getNewGridWithWallToggled(this.state.grid, row, col);
-    this.setState({ grid: newGrid });
+    this.setState({grid: newGrid});
   }
 
   handleMouseUp() {
-    this.setState({ mouseIsPressed: false });
+    this.setState({mouseIsPressed: false});
   }
 
   animateAlgorithm(visitedNodesInOrder, nodesInShortestPathOrder) {
@@ -51,7 +51,7 @@ export default class PathfindingVisualizer extends Component {
         const node = visitedNodesInOrder[i];
         if (!visitedNodesInOrder.isWall) {
           document.getElementById(`node-${node.row}-${node.col}`).className =
-            "node node-visited";
+            'node node-visited';
         }
       }, 10 * i);
     }
@@ -62,56 +62,57 @@ export default class PathfindingVisualizer extends Component {
       setTimeout(() => {
         const node = nodesInShortestPathOrder[i];
         document.getElementById(`node-${node.row}-${node.col}`).className =
-          "node node-shortest-path";
+          'node node-shortest-path';
       }, 50 * i);
     }
   }
 
   visualizeAlgorithm(algorithm) {
-    const { grid } = this.state;
+    const {grid} = this.state;
     const startNode = grid[START_NODE_ROW][START_NODE_COL];
     const finishNode = grid[FINISH_NODE_ROW][FINISH_NODE_COL];
     let visitedNodesInOrder = [];
 
     switch (algorithm) {
-      case "djikstra":
+      case 'djikstra':
         visitedNodesInOrder = dijkstra(grid, startNode, finishNode);
         break;
-      case "depthFirstSearch":
-        visitedNodesInOrder = depthFirstSearch(
+      case 'depthFirstSearch':
+        visitedNodesInOrder = unweightedAlgorithm(
           grid,
           startNode,
           finishNode,
-          "depthFirstSearch"
+          'depthFirstSearch'
         );
         break;
-      case "breadthFirstSearch":
-        visitedNodesInOrder = depthFirstSearch(
+      case 'breadthFirstSearch':
+        visitedNodesInOrder = unweightedAlgorithm(
           grid,
           startNode,
           finishNode,
-          "breadthFirstSearch"
+          'breadthFirstSearch'
         );
         break;
       default:
         break;
     }
     const nodesInShortestPathOrder = getNodesInShortestPathOrder(finishNode);
+    console.log(nodesInShortestPathOrder.length);
     this.animateAlgorithm(visitedNodesInOrder, nodesInShortestPathOrder);
   }
 
   render() {
-    const { grid, mouseIsPressed } = this.state;
+    const {grid, mouseIsPressed} = this.state;
 
     return (
       <>
-        <button onClick={() => this.visualizeAlgorithm("djikstra")}>
+        <button onClick={() => this.visualizeAlgorithm('djikstra')}>
           Visualize Dijkstra's Algorithm
         </button>
-        <button onClick={() => this.visualizeAlgorithm("depthFirstSearch")}>
+        <button onClick={() => this.visualizeAlgorithm('depthFirstSearch')}>
           Visualize DepthFirstSearch Algorithm
         </button>
-        <button onClick={() => this.visualizeAlgorithm("breadthFirstSearch")}>
+        <button onClick={() => this.visualizeAlgorithm('breadthFirstSearch')}>
           Visualize BreadthFirstSearch Algorithm
         </button>
         <div className="grid">
@@ -119,7 +120,7 @@ export default class PathfindingVisualizer extends Component {
             return (
               <div key={rowIdx}>
                 {row.map((node, nodeIdx) => {
-                  const { row, col, isFinish, isStart, isWall } = node;
+                  const {row, col, isFinish, isStart, isWall} = node;
                   return (
                     <Node
                       key={nodeIdx}
@@ -167,7 +168,7 @@ const createNode = (col, row) => {
     distance: Infinity,
     isVisited: false,
     isWall: false,
-    previousNode: null
+    previousNode: null,
   };
 };
 
@@ -176,7 +177,7 @@ const getNewGridWithWallToggled = (grid, row, col) => {
   const node = newGrid[row][col];
   const newNode = {
     ...node,
-    isWall: !node.isWall
+    isWall: !node.isWall,
   };
   newGrid[row][col] = newNode;
   return newGrid;
