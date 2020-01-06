@@ -6,33 +6,32 @@
 export function unweightedAlgorithm(grid, startNode, endNode, algorithm) {
   const visitedNodesInOrder = [];
   const stack = [];
+  startNode.isVisisted = true;
   stack.push(startNode);
   let counter = 0;
   startNode.distance = 0;
-
+  let node = null;
   while (!!stack.length) {
-    // if (algorithm === "depthFirstSearch") {
-    //   const node = stack.pop();
-    // } else if (algorithm === "breadthFirstSearch") {
-    //   const node = stack.shift();
-    // }
-    const node = stack.pop();
-    node.isVisisted = true;
+    const copy = [...stack];
+    sortNodesByDistance(copy);
+    if (copy.shift().distance === Infinity) {
+      console.log(':FDSAFDSAFDSAKLDFJSALKDFJSLAK');
+      return visitedNodesInOrder;
+    }
+    if (algorithm === 'depthFirstSearch') {
+      node = stack.pop();
+    } else if (algorithm === 'breadthFirstSearch') {
+      node = stack.shift();
+    }
+    if (!node.isVisisted) node.isVisisted = true;
     visitedNodesInOrder.push(node);
+
     if (node.isWall) {
       continue;
     }
 
-    // If the closest node is at a distance of infinity,
-    // we must be trapped and should therefore stop.
-    if (node.distance === Infinity) {
-      console.log('END REACHED' + visitedNodesInOrder);
-      return visitedNodesInOrder;
-    }
-
     //end node is reached: return all nodes visited in order
     if (node === endNode) {
-      console.log('END REACHED' + visitedNodesInOrder);
       return visitedNodesInOrder;
     }
 
@@ -40,20 +39,12 @@ export function unweightedAlgorithm(grid, startNode, endNode, algorithm) {
 
     //push all unvisited neighbors onto stack, and set link to previous node
     for (const neighbor of unvisitedNeighbors) {
-      if (!neighbor.isVisisted) {
+      if (!neighbor.isVisisted && !neighbor.isWall) {
         neighbor.previousNode = node;
         neighbor.distance = node.distance + 1;
         stack.push(neighbor);
       }
     }
-  }
-}
-
-function updateUnvisitedNeighbors(node, grid) {
-  const unvisitedNeighbors = getUnvisitedNeighbors(node, grid);
-  for (const neighbor of unvisitedNeighbors) {
-    neighbor.distance = node.distance + 1;
-    neighbor.previousNode = node;
   }
 }
 
@@ -65,4 +56,8 @@ function getUnvisitedNeighbors(node, grid) {
   if (col > 0) neighbors.push(grid[row][col - 1]);
   if (col < grid[0].length - 1) neighbors.push(grid[row][col + 1]);
   return neighbors.filter(neighbor => !neighbor.isVisited);
+}
+
+function sortNodesByDistance(unvisitedNodes) {
+  unvisitedNodes.sort((nodeA, nodeB) => nodeA.distance - nodeB.distance);
 }

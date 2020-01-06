@@ -97,7 +97,6 @@ export default class PathfindingVisualizer extends Component {
         break;
     }
     const nodesInShortestPathOrder = getNodesInShortestPathOrder(finishNode);
-    console.log(nodesInShortestPathOrder.length);
     this.animateAlgorithm(visitedNodesInOrder, nodesInShortestPathOrder);
   }
 

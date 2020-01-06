@@ -59,15 +59,9 @@ function getAllNodes(grid) {
 export function getNodesInShortestPathOrder(finishNode) {
   const nodesInShortestPathOrder = [];
   let currentNode = finishNode;
-  let counter = 0;
   while (currentNode !== null) {
     nodesInShortestPathOrder.unshift(currentNode);
     currentNode = currentNode.previousNode;
-    console.log(currentNode);
-    counter++;
-    if (counter === 100) {
-      return nodesInShortestPathOrder;
-    }
   }
   return nodesInShortestPathOrder;
 }
