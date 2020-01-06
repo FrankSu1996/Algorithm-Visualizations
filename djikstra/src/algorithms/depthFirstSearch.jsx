@@ -12,15 +12,9 @@ export function unweightedAlgorithm(grid, startNode, endNode, algorithm) {
   startNode.distance = 0;
   let node = null;
   while (!!stack.length) {
-    const copy = [...stack];
-    sortNodesByDistance(copy);
-    if (copy.shift().distance === Infinity) {
-      console.log(':FDSAFDSAFDSAKLDFJSALKDFJSLAK');
-      return visitedNodesInOrder;
-    }
-    if (algorithm === 'depthFirstSearch') {
+    if (algorithm === "depthFirstSearch") {
       node = stack.pop();
-    } else if (algorithm === 'breadthFirstSearch') {
+    } else if (algorithm === "breadthFirstSearch") {
       node = stack.shift();
     }
     if (!node.isVisisted) node.isVisisted = true;
@@ -35,7 +29,7 @@ export function unweightedAlgorithm(grid, startNode, endNode, algorithm) {
       return visitedNodesInOrder;
     }
 
-    const unvisitedNeighbors = getUnvisitedNeighbors(node, grid);
+    const unvisitedNeighbors = getNeighbors(node, grid);
 
     //push all unvisited neighbors onto stack, and set link to previous node
     for (const neighbor of unvisitedNeighbors) {
@@ -48,14 +42,14 @@ export function unweightedAlgorithm(grid, startNode, endNode, algorithm) {
   }
 }
 
-function getUnvisitedNeighbors(node, grid) {
+function getNeighbors(node, grid) {
   const neighbors = [];
-  const {col, row} = node;
+  const { col, row } = node;
   if (row > 0) neighbors.push(grid[row - 1][col]);
   if (row < grid.length - 1) neighbors.push(grid[row + 1][col]);
   if (col > 0) neighbors.push(grid[row][col - 1]);
   if (col < grid[0].length - 1) neighbors.push(grid[row][col + 1]);
-  return neighbors.filter(neighbor => !neighbor.isVisited);
+  return neighbors;
 }
 
 function sortNodesByDistance(unvisitedNodes) {
