@@ -41,4 +41,9 @@ to the main menu and reset the parameters for a new simulation. Enjoy!!
 ![alt text](https://github.com/FrankSu1996/Machine-Learning/blob/master/TSP_GeneticAlgorithm/src/images/world.png)
 
 ## Graph Processing Algorithms
-To run the application, please clone the repository. Then, inside the GraphAlgorithms directory, first run **npm install** to install dependencies, then **npm start** to view the application running locally in your browser.
+To run the application, please clone the repository. Then, inside the GraphAlgorithms directory, first run **npm install** to install dependencies, then **npm start** to view the application running locally in your browser. To place walls in the graph that block the path-finding algorithm, merely click and drag through nodes. Then click on a visualize algorithm button and watch the magic unfold!
+
+* Note: Currently In development. Some features to be improved/added in the future are:
+1. Debug Breadth-First-Search
+2. Implement dynamic placement of start and finish nodes
+3. Add option to add weighted walls. (currently nodes are all same distance between each other)
