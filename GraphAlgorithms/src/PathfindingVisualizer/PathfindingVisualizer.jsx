@@ -8,7 +8,7 @@ import './PathfindingVisualizer.css';
 let START_NODE_ROW = 10;
 let START_NODE_COL = 15;
 let FINISH_NODE_ROW = 10;
-let FINISH_NODE_COL = 17;
+let FINISH_NODE_COL = 30;
 
 export default class PathfindingVisualizer extends Component {
   constructor () {
@@ -49,7 +49,7 @@ export default class PathfindingVisualizer extends Component {
     if (this.state.startNodeSelected) {
       newGrid = updateGridWithNewStartNode (this.state.grid, row, col);
     } else if (this.state.finishNodeSelected) {
-      //selecting new finish node
+      newGrid = updateGridWithNewFinishNode (this.state.grid, row, col);
     } else {
       //placing walls
       newGrid = getNewGridWithWallToggled (this.state.grid, row, col);
@@ -58,6 +58,11 @@ export default class PathfindingVisualizer extends Component {
   }
 
   handleMouseUp () {
+    if (this.state.startNodeSelected) {
+      this.setState ({startNodeSelected: false});
+    } else if (this.state.finishNodeSelected) {
+      this.setState ({finishNodeSelected: false});
+    }
     this.setState ({mouseIsPressed: false});
   }
 
@@ -118,7 +123,6 @@ export default class PathfindingVisualizer extends Component {
       default:
         break;
     }
-    console.log (visitedNodesInOrder.length);
     const nodesInShortestPathOrder = getNodesInShortestPathOrder (finishNode);
     this.animateAlgorithm (visitedNodesInOrder, nodesInShortestPathOrder);
   }
@@ -191,6 +195,7 @@ const createNode = (col, row) => {
     isVisited: false,
     isWall: false,
     previousNode: null,
+    animationDirection: null,
   };
 };
 
@@ -223,5 +228,26 @@ const updateGridWithNewStartNode = (grid, row, col) => {
   newGrid[row][col] = newStartNode;
   START_NODE_ROW = row;
   START_NODE_COL = col;
+  return newGrid;
+};
+
+const updateGridWithNewFinishNode = (grid, row, col) => {
+  const prevFinishRow = FINISH_NODE_ROW;
+  const prevFinishCol = FINISH_NODE_COL;
+  const newGrid = grid.slice ();
+
+  //set old finish node to normal node
+  const oldStartNode = newGrid[prevFinishRow][prevFinishCol];
+  oldStartNode.isFinish = false;
+
+  //set new finish node
+  const node = newGrid[row][col];
+  const newFinishNode = {
+    ...node,
+    isFinish: true,
+  };
+  newGrid[row][col] = newFinishNode;
+  FINISH_NODE_ROW = row;
+  FINISH_NODE_COL = col;
   return newGrid;
 };
