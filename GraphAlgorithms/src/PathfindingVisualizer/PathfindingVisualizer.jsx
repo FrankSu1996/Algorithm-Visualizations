@@ -7,8 +7,8 @@ import './PathfindingVisualizer.css';
 
 let START_NODE_ROW = 10;
 let START_NODE_COL = 15;
-let FINISH_NODE_ROW = 11;
-let FINISH_NODE_COL = 19;
+let FINISH_NODE_ROW = 10;
+let FINISH_NODE_COL = 17;
 
 export default class PathfindingVisualizer extends Component {
   constructor () {
@@ -28,7 +28,6 @@ export default class PathfindingVisualizer extends Component {
 
   //handles either placing walls, or setting start and finish nodes
   handleMouseDown (row, col) {
-    console.log (row, col);
     let newGrid = [];
     if (this.state.grid[row][col].isStart) {
       this.setState ({startNodeSelected: true});
@@ -58,14 +57,8 @@ export default class PathfindingVisualizer extends Component {
     this.setState ({grid: newGrid});
   }
 
-  handleMouseUp (row, col) {
+  handleMouseUp () {
     this.setState ({mouseIsPressed: false});
-    // if (this.state.startNodeSelected) {
-    //   const newGrid = updateGridWithNewStartNode (this.state.grid, row, col);
-    //   this.setState ({grid: newGrid, startNodeSelected: false});
-    // }
-    if (this.state.finishNodeSelected) {
-    }
   }
 
   animateAlgorithm (visitedNodesInOrder, nodesInShortestPathOrder) {
@@ -73,7 +66,7 @@ export default class PathfindingVisualizer extends Component {
       if (i === visitedNodesInOrder.length) {
         setTimeout (() => {
           this.animateShortestPath (nodesInShortestPathOrder);
-        }, 10 * i);
+        }, 20 * i);
         return;
       }
       setTimeout (() => {
@@ -82,7 +75,7 @@ export default class PathfindingVisualizer extends Component {
           document.getElementById (`node-${node.row}-${node.col}`).className =
             'node node-visited';
         }
-      }, 10 * i);
+      }, 20 * i);
     }
   }
 
@@ -125,6 +118,7 @@ export default class PathfindingVisualizer extends Component {
       default:
         break;
     }
+    console.log (visitedNodesInOrder.length);
     const nodesInShortestPathOrder = getNodesInShortestPathOrder (finishNode);
     this.animateAlgorithm (visitedNodesInOrder, nodesInShortestPathOrder);
   }
@@ -161,7 +155,7 @@ export default class PathfindingVisualizer extends Component {
                         this.handleMouseDown (row, col)}
                       onMouseEnter={(row, col) =>
                         this.handleMouseEnter (row, col)}
-                      onMouseUp={() => this.handleMouseUp (row, col)}
+                      onMouseUp={() => this.handleMouseUp ()}
                       row={row}
                     />
                   );

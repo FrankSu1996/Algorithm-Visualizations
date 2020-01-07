@@ -16,7 +16,7 @@ export function unweightedAlgorithm (grid, startNode, endNode, algorithm) {
     } else if (algorithm === 'breadthFirstSearch') {
       node = stack.shift ();
     }
-    node.isVisited = true;
+
     visitedNodesInOrder.push (node);
 
     if (node.isWall) {
@@ -29,12 +29,14 @@ export function unweightedAlgorithm (grid, startNode, endNode, algorithm) {
     }
 
     const unvisitedNeighbors = getNeighbors (node, grid);
+    shuffle (unvisitedNeighbors);
 
     //push all unvisited neighbors onto stack, and set link to previous node
     for (const neighbor of unvisitedNeighbors) {
       if (!neighbor.isVisited && !neighbor.isWall) {
         neighbor.previousNode = node;
         neighbor.distance = node.distance + 1;
+        neighbor.isVisited = true;
         stack.push (neighbor);
       }
     }
@@ -48,5 +50,13 @@ function getNeighbors (node, grid) {
   if (row < grid.length - 1) neighbors.push (grid[row + 1][col]);
   if (col > 0) neighbors.push (grid[row][col - 1]);
   if (col < grid[0].length - 1) neighbors.push (grid[row][col + 1]);
-  return neighbors;
+  return neighbors.filter (neighbor => !neighbor.isVisited);
+}
+
+function shuffle (a) {
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor (Math.random () * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
 }
