@@ -47,3 +47,5 @@ To run the application, please clone the repository. Then, inside the GraphAlgor
 1. Improve Breadth-First Search performance
 2. Implement dynamic placement of start and finish nodes
 3. Add option to add weighted walls. (currently nodes are all same distance between each other)
+
+* Known bugs: There is currently a small bug regarding wall placements and start/finish node placements. Sometimes, even when the left-mouse click is released, the onMouseUp() event listener is not firing properly. If this happens, simply click once anywhere. To avoid this, simply perform drag-and-drop operations slowly. Not sure why this is happening :(
