@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/Algorithm-Visualizations/static/css/main.c6d65cf5.chunk.css",
-    "main.js": "/Algorithm-Visualizations/static/js/main.e3b56329.chunk.js",
-    "main.js.map": "/Algorithm-Visualizations/static/js/main.e3b56329.chunk.js.map",
-    "runtime-main.js": "/Algorithm-Visualizations/static/js/runtime-main.8db85261.js",
-    "runtime-main.js.map": "/Algorithm-Visualizations/static/js/runtime-main.8db85261.js.map",
-    "static/js/2.7c5aa08c.chunk.js": "/Algorithm-Visualizations/static/js/2.7c5aa08c.chunk.js",
-    "static/js/2.7c5aa08c.chunk.js.map": "/Algorithm-Visualizations/static/js/2.7c5aa08c.chunk.js.map",
-    "index.html": "/Algorithm-Visualizations/index.html",
-    "precache-manifest.8ec176ec6e20a6642db6200e1ad12883.js": "/Algorithm-Visualizations/precache-manifest.8ec176ec6e20a6642db6200e1ad12883.js",
-    "service-worker.js": "/Algorithm-Visualizations/service-worker.js",
-    "static/css/main.c6d65cf5.chunk.css.map": "/Algorithm-Visualizations/static/css/main.c6d65cf5.chunk.css.map",
-    "static/js/2.7c5aa08c.chunk.js.LICENSE": "/Algorithm-Visualizations/static/js/2.7c5aa08c.chunk.js.LICENSE",
-    "static/media/Node.css": "/Algorithm-Visualizations/static/media/triangletwo-right.49fad9e6.svg"
+    "main.css": "/GraphVisualz/static/css/main.818acba4.chunk.css",
+    "main.js": "/GraphVisualz/static/js/main.73839c83.chunk.js",
+    "main.js.map": "/GraphVisualz/static/js/main.73839c83.chunk.js.map",
+    "runtime-main.js": "/GraphVisualz/static/js/runtime-main.cf8c8213.js",
+    "runtime-main.js.map": "/GraphVisualz/static/js/runtime-main.cf8c8213.js.map",
+    "static/js/2.7c5aa08c.chunk.js": "/GraphVisualz/static/js/2.7c5aa08c.chunk.js",
+    "static/js/2.7c5aa08c.chunk.js.map": "/GraphVisualz/static/js/2.7c5aa08c.chunk.js.map",
+    "index.html": "/GraphVisualz/index.html",
+    "precache-manifest.4a4d80da765345d0fb06130e81db4ea0.js": "/GraphVisualz/precache-manifest.4a4d80da765345d0fb06130e81db4ea0.js",
+    "service-worker.js": "/GraphVisualz/service-worker.js",
+    "static/css/main.818acba4.chunk.css.map": "/GraphVisualz/static/css/main.818acba4.chunk.css.map",
+    "static/js/2.7c5aa08c.chunk.js.LICENSE": "/GraphVisualz/static/js/2.7c5aa08c.chunk.js.LICENSE",
+    "static/media/Node.css": "/GraphVisualz/static/media/triangletwo-right.49fad9e6.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.8db85261.js",
+    "static/js/runtime-main.cf8c8213.js",
     "static/js/2.7c5aa08c.chunk.js",
-    "static/css/main.c6d65cf5.chunk.css",
-    "static/js/main.e3b56329.chunk.js"
+    "static/css/main.818acba4.chunk.css",
+    "static/js/main.73839c83.chunk.js"
   ]
 }
