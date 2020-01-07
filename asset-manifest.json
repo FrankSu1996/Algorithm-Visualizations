@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/GraphVisualz/static/css/main.818acba4.chunk.css",
-    "main.js": "/GraphVisualz/static/js/main.73839c83.chunk.js",
-    "main.js.map": "/GraphVisualz/static/js/main.73839c83.chunk.js.map",
-    "runtime-main.js": "/GraphVisualz/static/js/runtime-main.cf8c8213.js",
-    "runtime-main.js.map": "/GraphVisualz/static/js/runtime-main.cf8c8213.js.map",
-    "static/js/2.7c5aa08c.chunk.js": "/GraphVisualz/static/js/2.7c5aa08c.chunk.js",
-    "static/js/2.7c5aa08c.chunk.js.map": "/GraphVisualz/static/js/2.7c5aa08c.chunk.js.map",
-    "index.html": "/GraphVisualz/index.html",
-    "precache-manifest.4a4d80da765345d0fb06130e81db4ea0.js": "/GraphVisualz/precache-manifest.4a4d80da765345d0fb06130e81db4ea0.js",
-    "service-worker.js": "/GraphVisualz/service-worker.js",
-    "static/css/main.818acba4.chunk.css.map": "/GraphVisualz/static/css/main.818acba4.chunk.css.map",
-    "static/js/2.7c5aa08c.chunk.js.LICENSE": "/GraphVisualz/static/js/2.7c5aa08c.chunk.js.LICENSE",
-    "static/media/Node.css": "/GraphVisualz/static/media/triangletwo-right.49fad9e6.svg"
+    "main.css": "/GRAPH/static/css/main.f892b541.chunk.css",
+    "main.js": "/GRAPH/static/js/main.878a5af2.chunk.js",
+    "main.js.map": "/GRAPH/static/js/main.878a5af2.chunk.js.map",
+    "runtime-main.js": "/GRAPH/static/js/runtime-main.ba6c9538.js",
+    "runtime-main.js.map": "/GRAPH/static/js/runtime-main.ba6c9538.js.map",
+    "static/js/2.7c5aa08c.chunk.js": "/GRAPH/static/js/2.7c5aa08c.chunk.js",
+    "static/js/2.7c5aa08c.chunk.js.map": "/GRAPH/static/js/2.7c5aa08c.chunk.js.map",
+    "index.html": "/GRAPH/index.html",
+    "precache-manifest.117103db867954c14d7c4104bc3a66d8.js": "/GRAPH/precache-manifest.117103db867954c14d7c4104bc3a66d8.js",
+    "service-worker.js": "/GRAPH/service-worker.js",
+    "static/css/main.f892b541.chunk.css.map": "/GRAPH/static/css/main.f892b541.chunk.css.map",
+    "static/js/2.7c5aa08c.chunk.js.LICENSE": "/GRAPH/static/js/2.7c5aa08c.chunk.js.LICENSE",
+    "static/media/Node.css": "/GRAPH/static/media/triangletwo-right.49fad9e6.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.cf8c8213.js",
+    "static/js/runtime-main.ba6c9538.js",
     "static/js/2.7c5aa08c.chunk.js",
-    "static/css/main.818acba4.chunk.css",
-    "static/js/main.73839c83.chunk.js"
+    "static/css/main.f892b541.chunk.css",
+    "static/js/main.878a5af2.chunk.js"
   ]
 }
