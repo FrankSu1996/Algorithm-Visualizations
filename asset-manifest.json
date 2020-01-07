@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/GraphAlgorithms/static/css/main.f258a355.chunk.css",
+    "main.js": "/GraphAlgorithms/static/js/main.305d80dc.chunk.js",
+    "main.js.map": "/GraphAlgorithms/static/js/main.305d80dc.chunk.js.map",
+    "runtime-main.js": "/GraphAlgorithms/static/js/runtime-main.808bf84a.js",
+    "runtime-main.js.map": "/GraphAlgorithms/static/js/runtime-main.808bf84a.js.map",
+    "static/js/2.7c5aa08c.chunk.js": "/GraphAlgorithms/static/js/2.7c5aa08c.chunk.js",
+    "static/js/2.7c5aa08c.chunk.js.map": "/GraphAlgorithms/static/js/2.7c5aa08c.chunk.js.map",
+    "index.html": "/GraphAlgorithms/index.html",
+    "precache-manifest.cf08bdbb99ea807d225074e5db4726a7.js": "/GraphAlgorithms/precache-manifest.cf08bdbb99ea807d225074e5db4726a7.js",
+    "service-worker.js": "/GraphAlgorithms/service-worker.js",
+    "static/css/main.f258a355.chunk.css.map": "/GraphAlgorithms/static/css/main.f258a355.chunk.css.map",
+    "static/js/2.7c5aa08c.chunk.js.LICENSE": "/GraphAlgorithms/static/js/2.7c5aa08c.chunk.js.LICENSE",
+    "static/media/Node.css": "/GraphAlgorithms/static/media/triangletwo-right.49fad9e6.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.808bf84a.js",
+    "static/js/2.7c5aa08c.chunk.js",
+    "static/css/main.f258a355.chunk.css",
+    "static/js/main.305d80dc.chunk.js"
+  ]
+}
