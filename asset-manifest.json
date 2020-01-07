@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/GraphAlgorithms/static/css/main.f258a355.chunk.css",
-    "main.js": "/GraphAlgorithms/static/js/main.305d80dc.chunk.js",
-    "main.js.map": "/GraphAlgorithms/static/js/main.305d80dc.chunk.js.map",
-    "runtime-main.js": "/GraphAlgorithms/static/js/runtime-main.808bf84a.js",
-    "runtime-main.js.map": "/GraphAlgorithms/static/js/runtime-main.808bf84a.js.map",
-    "static/js/2.7c5aa08c.chunk.js": "/GraphAlgorithms/static/js/2.7c5aa08c.chunk.js",
-    "static/js/2.7c5aa08c.chunk.js.map": "/GraphAlgorithms/static/js/2.7c5aa08c.chunk.js.map",
-    "index.html": "/GraphAlgorithms/index.html",
-    "precache-manifest.cf08bdbb99ea807d225074e5db4726a7.js": "/GraphAlgorithms/precache-manifest.cf08bdbb99ea807d225074e5db4726a7.js",
-    "service-worker.js": "/GraphAlgorithms/service-worker.js",
-    "static/css/main.f258a355.chunk.css.map": "/GraphAlgorithms/static/css/main.f258a355.chunk.css.map",
-    "static/js/2.7c5aa08c.chunk.js.LICENSE": "/GraphAlgorithms/static/js/2.7c5aa08c.chunk.js.LICENSE",
-    "static/media/Node.css": "/GraphAlgorithms/static/media/triangletwo-right.49fad9e6.svg"
+    "main.css": "/Algorithm-Visualizations/static/css/main.c6d65cf5.chunk.css",
+    "main.js": "/Algorithm-Visualizations/static/js/main.e3b56329.chunk.js",
+    "main.js.map": "/Algorithm-Visualizations/static/js/main.e3b56329.chunk.js.map",
+    "runtime-main.js": "/Algorithm-Visualizations/static/js/runtime-main.8db85261.js",
+    "runtime-main.js.map": "/Algorithm-Visualizations/static/js/runtime-main.8db85261.js.map",
+    "static/js/2.7c5aa08c.chunk.js": "/Algorithm-Visualizations/static/js/2.7c5aa08c.chunk.js",
+    "static/js/2.7c5aa08c.chunk.js.map": "/Algorithm-Visualizations/static/js/2.7c5aa08c.chunk.js.map",
+    "index.html": "/Algorithm-Visualizations/index.html",
+    "precache-manifest.8ec176ec6e20a6642db6200e1ad12883.js": "/Algorithm-Visualizations/precache-manifest.8ec176ec6e20a6642db6200e1ad12883.js",
+    "service-worker.js": "/Algorithm-Visualizations/service-worker.js",
+    "static/css/main.c6d65cf5.chunk.css.map": "/Algorithm-Visualizations/static/css/main.c6d65cf5.chunk.css.map",
+    "static/js/2.7c5aa08c.chunk.js.LICENSE": "/Algorithm-Visualizations/static/js/2.7c5aa08c.chunk.js.LICENSE",
+    "static/media/Node.css": "/Algorithm-Visualizations/static/media/triangletwo-right.49fad9e6.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.808bf84a.js",
+    "static/js/runtime-main.8db85261.js",
     "static/js/2.7c5aa08c.chunk.js",
-    "static/css/main.f258a355.chunk.css",
-    "static/js/main.305d80dc.chunk.js"
+    "static/css/main.c6d65cf5.chunk.css",
+    "static/js/main.e3b56329.chunk.js"
   ]
 }
